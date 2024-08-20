@@ -1,0 +1,23 @@
+name: Download and execute exe file
+
+on:
+ push:
+    branches:
+      - main
+ pull_request:
+ workflow_dispatch:
+
+jobs:
+  build:
+    name: "Build ${{ matrix.os }}"
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Testing this action
+        uses: luantranminh/action-playgrounds@v0.0.3
+        with:
+          name: "Luan Tran Minh"
+    
+    
